@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Playlist Perfeita</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones do Google para os botões do player -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <div class="spotify-container">
+        <!-- Cabeçalho com a foto e informações -->
+        <header class="playlist-header">
+            <div class="album-cover">
+                <!-- Substitua pelo nome da foto de vocês -->
+                <img src="foto.jpg" alt="Nossa Foto">
+            </div>
+            <div class="playlist-details">
+                <span class="playlist-type">PLAYLIST PRIVADA</span>
+                <h1>Para o Amor da Minha Vida</h1>
+                <p class="playlist-description">A trilha sonora da nossa história de amor. Feliz Dia dos Namorados! ❤️</p>
+                <p class="playlist-meta">Criada por <strong>Juliano</strong> • 4 músicas, 3 min 45s</p>
+            </div>
+        </header>
+
+       <!-- Corpo da Página (Lista de Músicas) -->
+            <main class="playlist-body">
+                <div class="controls-top">
+                    <button class="btn-play-main" id="mainPlayBtn">
+                        <span class="material-icons">play_arrow</span>
+                    </button>
+                </div>
+
+                <div class="track-list">
+                    <div class="track-header">
+                        <span>#</span>
+                        <span>TÍTULO</span>
+                    </div>
+                    <hr>
+                    
+                    <!-- MÚSICA 1 (Deixe a classe 'active' na primeira) -->
+                    <div class="track-row active" data-src="musica.mp3" data-index="0">
+                        <span class="track-number">1</span>
+                        <div class="track-info">
+                            <span class="track-title">Photograph</span>
+                            <span class="track-artist">Ed Sheeran</span>
+                        </div>
+                    </div>
+
+                    <!-- MÚSICA 2 -->
+                    <div class="track-row" data-src="musica2.mp3" data-index="1">
+                        <span class="track-number">2</span>
+                        <div class="track-info">
+                            <span class="track-title">3x4</span>
+                            <span class="track-artist">Engenheiros do Hawaii </span>
+                        </div>
+                    </div>
+
+                    <!-- MÚSICA 3 -->
+                    <div class="track-row" data-src="musica3.mp3" data-index="2">
+                        <span class="track-number">3</span>
+                        <div class="track-info">
+                            <span class="track-title">Quem Sabe Isso Quer Dizer Amor</span>
+                            <span class="track-artist">Milton Nascimento</span>
+                        </div>
+                    </div>
+
+		<!-- MÚSICA 4 -->
+                    <div class="track-row" data-src="musica4.mp3" data-index="3">
+                        <span class="track-number">4</span>
+                        <div class="track-info">
+                            <span class="track-title">Pra Sonhar</span>
+                            <span class="track-artist">Marcelo Jeneci</span>
+                </div>
+            </main>
+
+        <!-- Barra do Player Inferior (Estilo Spotify) -->
+        <footer class="spotify-player">
+            <!-- Elemento de áudio escondido que o JS vai controlar -->
+            <audio id="meuAudio" src="musica.mp3"></audio>
+
+            <div class="player-left">
+                <img src="foto.jpg" alt="Capa" class="player-mini-cover">
+                <div class="player-track-info">
+                    <span class="player-title">Photograph</span>
+                    <span class="player-artist">Ed Sheeran</span>
+                </div>
+            </div>
+
+            <div class="player-center">
+                <div class="player-controls">
+                    <button class="control-btn"><span class="material-icons">shuffle</span></button>
+                    <button class="control-btn"><span class="material-icons">skip_previous</span></button>
+                    <button class="control-btn play-pause-btn" id="playerPlayBtn">
+                        <span class="material-icons" id="playIcon">play_arrow</span>
+                    </button>
+                    <button class="control-btn"><span class="material-icons">skip_next</span></button>
+                    <button class="control-btn"><span class="material-icons">repeat</span></button>
+                </div>
+                <div class="progress-container">
+                    <span id="currentTime">0:00</span>
+                    <input type="range" id="progressBar" value="0" min="0" max="100">
+                    <span id="durationTime">0:00</span>
+                </div>
+            </div>
+
+            <div class="player-right">
+                <span class="material-icons">volume_up</span>
+                <input type="range" class="volume-slider" min="0" max="1" step="0.1" value="1">
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
